@@ -27,6 +27,7 @@ public static class DeadlockExample
 
     private static void DoWork1()
     {
+        Thread.Sleep(10);
         lock (lock1) // Thread 1 take lock1
         {
             Console.WriteLine("Thread 1: Holding lock1...");
