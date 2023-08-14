@@ -11,6 +11,7 @@ internal static class BankUsage
             for (int i = 0; i < 20; i++)
             {
                 account.Deposit(500);
+                account.Withdraw(100);
             }
         });
 
@@ -24,9 +25,6 @@ internal static class BankUsage
 
         thread1.Start();
         thread2.Start();
-
-        thread1.Join();
-        thread2.Join();
 
         Console.WriteLine($"Final Balance: {account.Balance}");
     }
